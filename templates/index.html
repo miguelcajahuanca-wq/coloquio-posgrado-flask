@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -38,7 +38,7 @@
         <section class="hero" id="inicio">
             <div class="hero-content">
                 <p class="hero-tag">Coloquio de Estudiantes de Posgrado</p>
-                <h1>Comparte tu investigación, conecta con otros y construye comunidad académica.</h1>
+                <h1>Avances en Física:Creando un ambiente de colaboración.</h1>
                 <p class="hero-lead">
                     Un espacio diseñado para que estudiantes de magíster y doctorado presenten sus avances,
                     reciban retroalimentación y generen nuevas colaboraciones.
@@ -109,7 +109,6 @@
                         <h3>Sesión de apertura</h3>
                         <p>
                             Bienvenida oficial, presentación del objetivo del coloquio y una charla invitada
-                            (por ejemplo, un joven investigador o un/a exalumno/a destacado/a).
                         </p>
                     </div>
                 </div>
@@ -146,7 +145,38 @@
             </div>
         </section>
 
-        
+        <section class="section" id="call">
+            <div class="section-header">
+                <h2>Convocatoria de propuestas (Call for Talks)</h2>
+                <p>Información resumida que verán las personas antes de enviar sus datos.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Tipos de contribución</h3>
+                    <ul class="bullets">
+                        <li>Charla oral (15–20 min + preguntas).</li>
+                        <li>Póster científico.</li>
+                        <li>Contribución relámpago (flash talk de 5 min).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Fechas clave</h3>
+                    <ul class="bullets">
+                        <li><strong>Fecha límite de envío:</strong> [dd/mm/aaaa]</li>
+                        <li><strong>Notificación de aceptación:</strong> [dd/mm/aaaa]</li>
+                        <li><strong>Publicación del programa:</strong> [dd/mm/aaaa]</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Requisitos del resumen</h3>
+                    <ul class="bullets">
+                        <li>Extensión: 150–250 palabras.</li>
+                        <li>Idioma: español o inglés.</li>
+                        <li>Debe incluir objetivos, metodología y resultados (si los hay).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <section class="section section-alt" id="registro">
             <div class="section-header">
@@ -197,10 +227,28 @@
 
                     <h3>Información de la contribución</h3>
                     <div class="form-grid">
+                        <div class="form-group">
+                            <label for="tipo">Tipo de contribución *</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="charla">Charla oral</option>
+                                <option value="poster">Póster</option>
+                                <option value="flash">Flash talk</option>
+                            </select>
+                            <p class="form-error" data-for="tipo"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="idioma">Idioma de la presentación *</label>
+                            <select id="idioma" name="idioma" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                            </select>
+                            <p class="form-error" data-for="idioma"></p>
                         </div>
                         <div class="form-group form-group-full">
                             <label for="titulo">Título de la presentación *</label>
-                            <input type="text" id="titulo" name="titulo" required placeholder="Título tentativo de tu charla">
+                            <input type="text" id="titulo" name="titulo" required placeholder="Título tentativo de tu charla o póster">
                             <p class="form-error" data-for="titulo"></p>
                         </div>
                         <div class="form-group form-group-full">
@@ -210,7 +258,7 @@
                         </div>
                         <div class="form-group form-group-full">
                             <label for="keywords">Palabras clave (separadas por coma)</label>
-                            <input type="text" id="keywords" name="keywords" placeholder="Ejemplo: Fisica de partículas, astrofísica, simulaciones numéricas">
+                            <input type="text" id="keywords" name="keywords" placeholder="Ejemplo: dinámica, epidemiología, sistemas complejos">
                         </div>
                     </div>
 
@@ -232,29 +280,25 @@
                     <button type="submit" class="btn btn-primary">Enviar propuesta</button>
                     <p class="form-note">* Campos obligatorios.</p>
                     <p id="form-success" class="form-success" hidden>
-                        ¡Gracias! Tu propuesta ha sido registrada de forma local en este navegador.
-                        Puedes exportar un resumen en formato JSON usando el botón de abajo.
+                        ¡Gracias! Tu propuesta ha sido enviada correctamente y archivada en el servidor.
                     </p>
                 </form>
 
                 <aside class="card form-help">
-                    <h3>Cómo se gestionan estos datos</h3>
+                    <h3>Gestión de propuestas</h3>
                     <p>
-                        Esta plantilla está pensada para ser desplegada fácilmente en GitHub Pages u otro
-                        hosting estático. Por defecto, los datos se almacenan solo en tu navegador (localStorage).
+                        En esta versión, el formulario envía los datos a un backend en Flask que los almacena
+                        en un archivo CSV en el servidor (<code>data/propuestas.csv</code>).
                     </p>
                     <p>
-                        Para producción real, puedes:
+                        El comité organizador puede descargar el archivo actualizado de propuestas en cualquier momento
+                        accediendo a:
                     </p>
-                    <ul class="bullets">
-                        <li>Conectar el formulario a un backend (Flask, Django, Node, etc.).</li>
-                        <li>Integrar servicios de formularios (Formspree, Getform, etc.).</li>
-                        <li>Exportar las propuestas en JSON y procesarlas manualmente.</li>
-                    </ul>
-                    <button id="export-json" class="btn btn-outline btn-small">
-                        Exportar propuestas en JSON
-                    </button>
-                    <a id="download-link" class="download-link" hidden>Descargar archivo</a>
+                    <p><code>/admin/propuestas.csv</code></p>
+                    <p class="muted">
+                        Para producción, se recomienda proteger esta ruta con autenticación básica, VPN o mediante un
+                        panel de administración más completo.
+                    </p>
                 </aside>
             </div>
         </section>
@@ -264,16 +308,16 @@
         <div class="footer-content">
             <div>
                 <h3>Contacto</h3>
-                <p>Correo del comité organizador: <a href="mailto:israel.obreque@usach.cl">israel.obreque@usach.cl</a></p>
-                <p>Doctorado en ciencias con mención en física · Física · USACH</p>
+                <p>Correo del comité organizador: <a href="mailto:comite.coloquio@universidad.cl">comite.coloquio@universidad.cl</a></p>
+                <p>[Programa de Posgrado] · [Facultad] · [Universidad]</p>
             </div>
             <div>
                 <h3>Organiza</h3>
-                <p>Comité de estudiantes de posgrado.</p>
+                <p>Comité de estudiantes de posgrado y académicos del programa.</p>
             </div>
             <div>
                 <h3>Créditos</h3>
-                <p>Plantilla web estática optimizada para GitHub Pages.</p>
+                <p>App Flask + frontend estático, lista para desplegar en un servidor o servicio de hosting.</p>
             </div>
         </div>
         <p class="footer-bottom">
