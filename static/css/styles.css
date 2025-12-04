@@ -3,22 +3,33 @@
    ============================ */
 
 :root {
-    --bg: #050816;
-    --bg-alt: #070b1f;
-    --bg-soft: #0f172a;
-    --primary: #38bdf8;
-    --primary-soft: rgba(56, 189, 248, 0.2);
-    --accent: #22c55e;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-    --border: #1f2937;
-    --danger: #f97373;
-    --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
+    /* ============================
+       Paleta institucional USACH (modo oscuro)
+       ============================ */
+
+    --bg: #0A0E13;               /* Fondo principal */
+    --bg-alt: #121820;           /* Fondo alterno */
+    --bg-soft: #1A2430;          /* Fondo suave */
+
+    --primary: #00A8A0;          /* Azul petrÃ³leo / Verde USACH */
+    --primary-soft: rgba(0, 168, 160, 0.22);
+
+    --accent: #F47B20;           /* Naranja institucional USACH */
+    --accent-soft: rgba(244, 123, 32, 0.28);
+
+    --text: #E6E8EB;             /* Blanco suave */
+    --muted: #A4ACB5;            /* Gris institucional */
+    --border: #2A3541;           /* Gris azulado USACH */
+
+    --danger: #E85D5D;           /* Rojo para alertas */
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
+
     --radius-lg: 1.25rem;
     --radius-md: 0.9rem;
     --radius-pill: 999px;
     --transition-fast: 0.18s ease-out;
 }
+
 
 *,
 *::before,
