@@ -1,1 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloquio de Estudiantes de Posgrado</title>
+    <meta name="description" content="Coloquio de estudiantes de posgrado: espacio para presentar investigaciones, hacer redes y discutir ciencia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-mark">C</span>
+                <div class="logo-text">
+                    <span class="logo-title">Coloquio Posgrado</span>
+                    <span class="logo-subtitle">[Tu Facultad / Universidad]</span>
+                </div>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre">Sobre el evento</a></li>
+                <li><a href="#estructura">Estructura</a></li>
+                <li><a href="#call">Call for talks</a></li>
+                <li><a href="#registro">Registro</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
 
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <p class="hero-tag">Coloquio de Estudiantes de Posgrado</p>
+                <h1>Comparte tu investigación, conecta con otros y construye comunidad académica.</h1>
+                <p class="hero-lead">
+                    Un espacio diseñado para que estudiantes de magíster y doctorado presenten sus avances,
+                    reciban retroalimentación y generen nuevas colaboraciones.
+                </p>
+                <div class="hero-actions">
+                    <a href="#registro" class="btn btn-primary">Enviar propuesta</a>
+                    <a href="#estructura" class="btn btn-outline">Ver estructura del evento</a>
+                </div>
+                <div class="hero-meta">
+                    <div>
+                        <span class="meta-label">Fecha</span>
+                        <span class="meta-value">[Día, mes, año]</span>
+                    </div>
+                    <div>
+                        <span class="meta-label">Modalidad</span>
+                        <span class="meta-value">[Presencial / Online / Híbrido]</span>
+                    </div>
+                    <div>
+                        <span class="meta-label">Lugar</span>
+                        <span class="meta-value">[Ciudad, país]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h2>Datos clave del coloquio</h2>
+                <ul>
+                    <li>Charlas de estudiantes de posgrado (magíster y doctorado).</li>
+                    <li>Sesiones temáticas y espacio para discusión abierta.</li>
+                    <li>Certificado de participación para expositores.</li>
+                    <li>Book of abstracts disponible en formato digital.</li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="section" id="sobre">
+            <div class="section-header">
+                <h2>Sobre el evento</h2>
+                <p>Contexto general y objetivos del coloquio.</p>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Propósito</h3>
+                    <p>
+                        El coloquio busca ofrecer un espacio formal, pero cercano, para que estudiantes de posgrado
+                        presenten sus proyectos de investigación, resultados preliminares o capítulos de tesis en desarrollo.
+                    </p>
+                    <p>
+                        El foco está en la discusión científica, el intercambio de ideas y la construcción de redes entre
+                        estudiantes, académicos y jóvenes investigadores.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>¿Quiénes pueden participar?</h3>
+                    <ul class="checklist">
+                        <li>Estudiantes de magíster y doctorado.</li>
+                        <li>Exalumnos recientes con proyectos aún en curso.</li>
+                        <li>Investigadores/as postdoctorales jóvenes (como invitados especiales).</li>
+                    </ul>
+                    <p class="muted">
+                        La participación puede ser como expositor/a, asistente o comentarista.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="estructura">
+            <div class="section-header">
+                <h2>Estructura general del coloquio</h2>
+                <p>Un esquema que puedes adaptar a tus necesidades.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-badge">1</div>
+                    <div class="timeline-content">
+                        <h3>Sesión de apertura</h3>
+                        <p>
+                            Bienvenida oficial, presentación del objetivo del coloquio y una charla invitada
+                            (por ejemplo, un joven investigador o un/a exalumno/a destacado/a).
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge">2</div>
+                    <div class="timeline-content">
+                        <h3>Sesiones temáticas</h3>
+                        <p>
+                            Bloques de charlas de 15–20 minutos más 5 minutos de preguntas, agrupadas por áreas
+                            temáticas o líneas de investigación.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge">3</div>
+                    <div class="timeline-content">
+                        <h3>Sesión de pósters / discusión informal</h3>
+                        <p>
+                            Espacio para presentaciones tipo póster, demostraciones o conversaciones informales
+                            alrededor de los proyectos de investigación.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge">4</div>
+                    <div class="timeline-content">
+                        <h3>Mesa redonda y cierre</h3>
+                        <p>
+                            Discusión sobre desafíos de la investigación en posgrado, oportunidades de colaboración,
+                            y comentarios finales sobre el evento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="call">
+            <div class="section-header">
+                <h2>Convocatoria de propuestas (Call for Talks)</h2>
+                <p>Información resumida que verán las personas antes de enviar sus datos.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Tipos de contribución</h3>
+                    <ul class="bullets">
+                        <li>Charla oral (15–20 min + preguntas).</li>
+                        <li>Póster científico.</li>
+                        <li>Contribución relámpago (flash talk de 5 min).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Fechas clave</h3>
+                    <ul class="bullets">
+                        <li><strong>Fecha límite de envío:</strong> [dd/mm/aaaa]</li>
+                        <li><strong>Notificación de aceptación:</strong> [dd/mm/aaaa]</li>
+                        <li><strong>Publicación del programa:</strong> [dd/mm/aaaa]</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Requisitos del resumen</h3>
+                    <ul class="bullets">
+                        <li>Extensión: 150–250 palabras.</li>
+                        <li>Idioma: español o inglés.</li>
+                        <li>Debe incluir objetivos, metodología y resultados (si los hay).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="registro">
+            <div class="section-header">
+                <h2>Formulario de registro y envío de propuesta</h2>
+                <p>Completa tus datos para participar como expositor/a en el coloquio.</p>
+            </div>
+
+            <div class="form-layout">
+                <form id="proposal-form" class="card form-card" novalidate>
+                    <h3>Datos personales</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Nombre y apellidos">
+                            <p class="form-error" data-for="nombre"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                            <p class="form-error" data-for="email"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="programa">Programa de estudios *</label>
+                            <input type="text" id="programa" name="programa" required placeholder="Magíster en..., Doctorado en...">
+                            <p class="form-error" data-for="programa"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="institucion">Institución *</label>
+                            <input type="text" id="institucion" name="institucion" required placeholder="Universidad / Centro de investigación">
+                            <p class="form-error" data-for="institucion"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="nivel">Nivel *</label>
+                            <select id="nivel" name="nivel" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="magister">Magíster</option>
+                                <option value="doctorado">Doctorado</option>
+                                <option value="postdoc">Postdoctorado</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <p class="form-error" data-for="nivel"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="asesor">Profesor/a guía (opcional)</label>
+                            <input type="text" id="asesor" name="asesor" placeholder="Nombre de tu supervisor/a">
+                        </div>
+                    </div>
+
+                    <h3>Información de la contribución</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="tipo">Tipo de contribución *</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="charla">Charla oral</option>
+                                <option value="poster">Póster</option>
+                                <option value="flash">Flash talk</option>
+                            </select>
+                            <p class="form-error" data-for="tipo"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="idioma">Idioma de la presentación *</label>
+                            <select id="idioma" name="idioma" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                            </select>
+                            <p class="form-error" data-for="idioma"></p>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="titulo">Título de la presentación *</label>
+                            <input type="text" id="titulo" name="titulo" required placeholder="Título tentativo de tu charla o póster">
+                            <p class="form-error" data-for="titulo"></p>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="resumen">Resumen (150–250 palabras) *</label>
+                            <textarea id="resumen" name="resumen" rows="6" required placeholder="Describe brevemente el objetivo, la metodología y los resultados principales (si existen)."></textarea>
+                            <p class="form-error" data-for="resumen"></p>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="keywords">Palabras clave (separadas por coma)</label>
+                            <input type="text" id="keywords" name="keywords" placeholder="Ejemplo: dinámica, epidemiología, sistemas complejos">
+                        </div>
+                    </div>
+
+                    <h3>Detalles adicionales</h3>
+                    <div class="form-grid">
+                        <div class="form-group form-group-full">
+                            <label for="comentarios">Comentarios o requisitos especiales</label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Disponibilidad horaria, requerimientos técnicos, etc."></textarea>
+                        </div>
+                        <div class="form-group form-group-full checkbox-group">
+                            <label>
+                                <input type="checkbox" id="consentimiento" name="consentimiento" required>
+                                Acepto que mis datos sean utilizados para la organización del coloquio y la comunicación oficial del evento. *
+                            </label>
+                            <p class="form-error" data-for="consentimiento"></p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar propuesta</button>
+                    <p class="form-note">* Campos obligatorios.</p>
+                    <p id="form-success" class="form-success" hidden>
+                        ¡Gracias! Tu propuesta ha sido enviada correctamente y archivada en el servidor.
+                    </p>
+                </form>
+
+                <aside class="card form-help">
+                    <h3>Gestión de propuestas</h3>
+                    <p>
+                        En esta versión, el formulario envía los datos a un backend en Flask que los almacena
+                        en un archivo CSV en el servidor (<code>data/propuestas.csv</code>).
+                    </p>
+                    <p>
+                        El comité organizador puede descargar el archivo actualizado de propuestas en cualquier momento
+                        accediendo a:
+                    </p>
+                    <p><code>/admin/propuestas.csv</code></p>
+                    <p class="muted">
+                        Para producción, se recomienda proteger esta ruta con autenticación básica, VPN o mediante un
+                        panel de administración más completo.
+                    </p>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+        <div class="footer-content">
+            <div>
+                <h3>Contacto</h3>
+                <p>Correo del comité organizador: <a href="mailto:comite.coloquio@universidad.cl">comite.coloquio@universidad.cl</a></p>
+                <p>[Programa de Posgrado] · [Facultad] · [Universidad]</p>
+            </div>
+            <div>
+                <h3>Organiza</h3>
+                <p>Comité de estudiantes de posgrado y académicos del programa.</p>
+            </div>
+            <div>
+                <h3>Créditos</h3>
+                <p>App Flask + frontend estático, lista para desplegar en un servidor o servicio de hosting.</p>
+            </div>
+        </div>
+        <p class="footer-bottom">
+            &copy; <span id="year"></span> Coloquio de Estudiantes de Posgrado. Todos los derechos reservados.
+        </p>
+    </footer>
+</body>
+</html>
