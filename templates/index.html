@@ -8,17 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header class="site-header">
         <nav class="navbar">
             <div class="logo">
-                <span class="logo-mark">C</span>
+                <span class="logo-mark">F</span>
                 <div class="logo-text">
                     <span class="logo-title">Coloquio Posgrado</span>
-                    <span class="logo-subtitle">[Tu Facultad / Universidad]</span>
+                    <span class="logo-subtitle">Física / USACH</span>
                 </div>
             </div>
             <button class="nav-toggle" aria-label="Abrir menú de navegación">
@@ -50,26 +50,17 @@
                 <div class="hero-meta">
                     <div>
                         <span class="meta-label">Fecha</span>
-                        <span class="meta-value">[Día, mes, año]</span>
+                        <span class="meta-value">14-15,enero,2026</span>
                     </div>
                     <div>
                         <span class="meta-label">Modalidad</span>
-                        <span class="meta-value">[Presencial / Online / Híbrido]</span>
+                        <span class="meta-value">Presencial</span>
                     </div>
                     <div>
                         <span class="meta-label">Lugar</span>
-                        <span class="meta-value">[Ciudad, país]</span>
+                        <span class="meta-value">Departamento de Fisica ,USACH</span>
                     </div>
                 </div>
-            </div>
-            <div class="hero-card">
-                <h2>Datos clave del coloquio</h2>
-                <ul>
-                    <li>Charlas de estudiantes de posgrado (magíster y doctorado).</li>
-                    <li>Sesiones temáticas y espacio para discusión abierta.</li>
-                    <li>Certificado de participación para expositores.</li>
-                    <li>Book of abstracts disponible en formato digital.</li>
-                </ul>
             </div>
         </section>
     </header>
@@ -100,7 +91,7 @@
                         <li>Investigadores/as postdoctorales jóvenes (como invitados especiales).</li>
                     </ul>
                     <p class="muted">
-                        La participación puede ser como expositor/a, asistente o comentarista.
+                        La participación puede ser como expositor/a, asistente.
                     </p>
                 </div>
             </div>
@@ -155,38 +146,7 @@
             </div>
         </section>
 
-        <section class="section" id="call">
-            <div class="section-header">
-                <h2>Convocatoria de propuestas (Call for Talks)</h2>
-                <p>Información resumida que verán las personas antes de enviar sus datos.</p>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Tipos de contribución</h3>
-                    <ul class="bullets">
-                        <li>Charla oral (15–20 min + preguntas).</li>
-                        <li>Póster científico.</li>
-                        <li>Contribución relámpago (flash talk de 5 min).</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Fechas clave</h3>
-                    <ul class="bullets">
-                        <li><strong>Fecha límite de envío:</strong> [dd/mm/aaaa]</li>
-                        <li><strong>Notificación de aceptación:</strong> [dd/mm/aaaa]</li>
-                        <li><strong>Publicación del programa:</strong> [dd/mm/aaaa]</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Requisitos del resumen</h3>
-                    <ul class="bullets">
-                        <li>Extensión: 150–250 palabras.</li>
-                        <li>Idioma: español o inglés.</li>
-                        <li>Debe incluir objetivos, metodología y resultados (si los hay).</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        
 
         <section class="section section-alt" id="registro">
             <div class="section-header">
@@ -237,28 +197,10 @@
 
                     <h3>Información de la contribución</h3>
                     <div class="form-grid">
-                        <div class="form-group">
-                            <label for="tipo">Tipo de contribución *</label>
-                            <select id="tipo" name="tipo" required>
-                                <option value="">Selecciona una opción</option>
-                                <option value="charla">Charla oral</option>
-                                <option value="poster">Póster</option>
-                                <option value="flash">Flash talk</option>
-                            </select>
-                            <p class="form-error" data-for="tipo"></p>
-                        </div>
-                        <div class="form-group">
-                            <label for="idioma">Idioma de la presentación *</label>
-                            <select id="idioma" name="idioma" required>
-                                <option value="">Selecciona una opción</option>
-                                <option value="es">Español</option>
-                                <option value="en">Inglés</option>
-                            </select>
-                            <p class="form-error" data-for="idioma"></p>
                         </div>
                         <div class="form-group form-group-full">
                             <label for="titulo">Título de la presentación *</label>
-                            <input type="text" id="titulo" name="titulo" required placeholder="Título tentativo de tu charla o póster">
+                            <input type="text" id="titulo" name="titulo" required placeholder="Título tentativo de tu charla">
                             <p class="form-error" data-for="titulo"></p>
                         </div>
                         <div class="form-group form-group-full">
@@ -268,7 +210,7 @@
                         </div>
                         <div class="form-group form-group-full">
                             <label for="keywords">Palabras clave (separadas por coma)</label>
-                            <input type="text" id="keywords" name="keywords" placeholder="Ejemplo: dinámica, epidemiología, sistemas complejos">
+                            <input type="text" id="keywords" name="keywords" placeholder="Ejemplo: Fisica de partículas, astrofísica, simulaciones numéricas">
                         </div>
                     </div>
 
@@ -290,25 +232,29 @@
                     <button type="submit" class="btn btn-primary">Enviar propuesta</button>
                     <p class="form-note">* Campos obligatorios.</p>
                     <p id="form-success" class="form-success" hidden>
-                        ¡Gracias! Tu propuesta ha sido enviada correctamente y archivada en el servidor.
+                        ¡Gracias! Tu propuesta ha sido registrada de forma local en este navegador.
+                        Puedes exportar un resumen en formato JSON usando el botón de abajo.
                     </p>
                 </form>
 
                 <aside class="card form-help">
-                    <h3>Gestión de propuestas</h3>
+                    <h3>Cómo se gestionan estos datos</h3>
                     <p>
-                        En esta versión, el formulario envía los datos a un backend en Flask que los almacena
-                        en un archivo CSV en el servidor (<code>data/propuestas.csv</code>).
+                        Esta plantilla está pensada para ser desplegada fácilmente en GitHub Pages u otro
+                        hosting estático. Por defecto, los datos se almacenan solo en tu navegador (localStorage).
                     </p>
                     <p>
-                        El comité organizador puede descargar el archivo actualizado de propuestas en cualquier momento
-                        accediendo a:
+                        Para producción real, puedes:
                     </p>
-                    <p><code>/admin/propuestas.csv</code></p>
-                    <p class="muted">
-                        Para producción, se recomienda proteger esta ruta con autenticación básica, VPN o mediante un
-                        panel de administración más completo.
-                    </p>
+                    <ul class="bullets">
+                        <li>Conectar el formulario a un backend (Flask, Django, Node, etc.).</li>
+                        <li>Integrar servicios de formularios (Formspree, Getform, etc.).</li>
+                        <li>Exportar las propuestas en JSON y procesarlas manualmente.</li>
+                    </ul>
+                    <button id="export-json" class="btn btn-outline btn-small">
+                        Exportar propuestas en JSON
+                    </button>
+                    <a id="download-link" class="download-link" hidden>Descargar archivo</a>
                 </aside>
             </div>
         </section>
@@ -318,16 +264,16 @@
         <div class="footer-content">
             <div>
                 <h3>Contacto</h3>
-                <p>Correo del comité organizador: <a href="mailto:comite.coloquio@universidad.cl">comite.coloquio@universidad.cl</a></p>
-                <p>[Programa de Posgrado] · [Facultad] · [Universidad]</p>
+                <p>Correo del comité organizador: <a href="mailto:israel.obreque@usach.cl">israel.obreque@usach.cl</a></p>
+                <p>Doctorado en ciencias con mención en física · Física · USACH</p>
             </div>
             <div>
                 <h3>Organiza</h3>
-                <p>Comité de estudiantes de posgrado y académicos del programa.</p>
+                <p>Comité de estudiantes de posgrado.</p>
             </div>
             <div>
                 <h3>Créditos</h3>
-                <p>App Flask + frontend estático, lista para desplegar en un servidor o servicio de hosting.</p>
+                <p>Plantilla web estática optimizada para GitHub Pages.</p>
             </div>
         </div>
         <p class="footer-bottom">
