@@ -121,19 +121,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 /* ============================================
-   HERO IMAGE ROTATION
+   SLIDER DE IMÁGENES LADO DERECHO
 ============================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".hero-slider .slide");
+    const slides = document.querySelectorAll(".hero-slide");
     let index = 0;
 
-    function rotateSlides() {
+    function nextSlide() {
         slides[index].classList.remove("active");
         index = (index + 1) % slides.length;
         slides[index].classList.add("active");
     }
 
-    setInterval(rotateSlides, 4500); // cambia cada 4.5s
+    setInterval(nextSlide, 4500);
 });
+
 
