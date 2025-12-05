@@ -724,25 +724,39 @@ textarea {
         grid-template-columns: minmax(0, 1fr);
     }
 }
-/* ============================================
-   HERO SLIDER
-============================================ */
+/* ===================================================
+   HERO LAYOUT (texto izquierda / imágenes derecha)
+=================================================== */
 
 .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 2rem;
     position: relative;
-    overflow: hidden;
+    background: var(--bg);
+    min-height: 75vh;
 }
 
-.hero-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Texto a la izquierda */
+.hero-content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Contenedor de imágenes */
+.hero-image-slider {
+    position: relative;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
 }
 
-.hero-slider .slide {
+/* Cada imagen */
+.hero-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -751,10 +765,24 @@ textarea {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1.8s ease-in-out;
+    transform: scale(1.05);
+    transition: opacity 1.5s ease-in-out, transform 3s ease-in-out;
 }
 
-.hero-slider .slide.active {
+/* Imagen activa */
+.hero-slide.active {
     opacity: 1;
+    transform: scale(1); /* pequeño efecto de zoom elegante */
 }
 
+/* Responsivo */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image-slider {
+        height: 45vh;
+        margin-top: 2rem;
+    }
+}
