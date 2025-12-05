@@ -36,7 +36,7 @@
         </nav>
 
         <section class="hero" id="inicio">
-            <div class="hero-content">
+            <div class="hero-content-left">
                 <p class="hero-tag">Coloquio de Estudiantes de Posgrado</p>
                 <h1>Avances en Física:Creando un ambiente de colaboración.</h1>
                 <p class="hero-lead">
@@ -61,6 +61,12 @@
                     </div>
                 </div>
             </div>
+            <div class="hero-image-slider">
+                <div class="hero-slide active" style="background-image: url('{{ url_for('static', filename='img/slider1.jpg') }}');"></div>
+                <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='img/slider2.jpg') }}');"></div>
+                <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='img/slider3.jpg') }}');"></div>
+            </div>
+        </section>
         </section>
         <div class="hero-slider">
             <div class="slide active" style="background-image: url('{{ url_for('static', filename='img/slider1.jpg') }}');"></div>
