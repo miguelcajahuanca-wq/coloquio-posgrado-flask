@@ -282,7 +282,7 @@ body {
 }
 
 /* ============================
-   Botones
+   Botones (linear-gradient(135deg, var(--primary), #0ea5e9);)
    ============================ */
 
 .btn {
@@ -301,7 +301,7 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary), #0ea5e9);
+    background: linear-gradient(to right, var(--primary), var(--accent));
     color: #0b1120;
     box-shadow: 0 16px 40px rgba(56, 189, 248, 0.6);
 }
