@@ -44,8 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "email",
             "programa",
             "institucion",
-            "nivel",
-            "tipo",
             "idioma",
             "titulo",
             "resumen",
