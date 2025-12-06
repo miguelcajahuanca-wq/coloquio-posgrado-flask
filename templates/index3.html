@@ -1,1 +1,240 @@
-kk
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloquio de Estudiantes de Posgrado</title>
+    <meta name="description" content="Coloquio de estudiantes de posgrado: espacio para presentar investigaciones, hacer redes y discutir ciencia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-mark">F</span>
+                <div class="logo-text">
+                    <span class="logo-title">Coloquio Posgrado</span>
+                    <span class="logo-subtitle">Física / USACH</span>
+                </div>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre">Sobre el evento</a></li>
+                <li><a href="#call">Call for talks</a></li>
+                <li><a href="#registro">Registro</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero" id="inicio">
+            <div class="hero-content-left">
+                <p class="hero-tag">Coloquio de Estudiantes de Posgrado</p>
+                <h1>Avances en Física:Creando un ambiente de colaboración.</h1>
+                <p class="hero-lead">
+                    Un espacio diseñado para que estudiantes de magíster y doctorado presenten sus avances,
+                    reciban retroalimentación y generen nuevas colaboraciones.
+                </p>
+                <div class="hero-actions">
+                    <a href="#registro" class="btn btn-primary">Enviar propuesta</a>
+                </div>
+                <div class="hero-meta">
+                    <div>
+                        <span class="meta-label">Fecha</span>
+                        <span class="meta-value">14-15,enero,2026</span>
+                    </div>
+                    <div>
+                        <span class="meta-label">Modalidad</span>
+                        <span class="meta-value">Presencial</span>
+                    </div>
+                    <div>
+                        <span class="meta-label">Lugar</span>
+                        <span class="meta-value">Departamento de Fisica ,USACH</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-slider">
+                <div class="hero-slide active" style="background-image: url('{{ url_for('static', filename='img/slider1.jpg') }}');"></div>
+                <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='img/slider2.jpg') }}');"></div>
+                <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='img/slider3.jpg') }}');"></div>
+            </div>
+        </section>
+        </section>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('{{ url_for('static', filename='img/slider1.jpg') }}');"></div>
+            <div class="slide" style="background-image: url('{{ url_for('static', filename='img/slider2.jpg') }}');"></div>
+            <div class="slide" style="background-image: url('{{ url_for('static', filename='img/slider3.jpg') }}');"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="sobre">
+            <div class="section-header">
+                <h2>Sobre el evento</h2>
+                <p>Contexto general y objetivos del coloquio.</p>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Propósito</h3>
+                    <p>
+                        El coloquio busca ofrecer un espacio formal, pero cercano, para que estudiantes de posgrado
+                        presenten sus proyectos de investigación, resultados preliminares o capítulos de tesis en desarrollo.
+                    </p>
+                    <p>
+                        El foco está en la discusión científica, el intercambio de ideas y la construcción de redes entre
+                        estudiantes, académicos y jóvenes investigadores.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="call">
+            <div class="section-header">
+                <h2>Convocatoria de propuestas (Call for Talks)</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Fechas clave</h3>
+                    <ul class="bullets">
+                        <li><strong>Fecha límite de envío:</strong> 05/01/2026</li>
+                        <li><strong>Publicación del programa:</strong> 08/01/2026</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="registro">
+            <div class="section-header">
+                <h2>Formulario de registro y envío de propuesta</h2>
+                <p>Completa tus datos para participar como expositor/a en el coloquio.</p>
+            </div>
+
+            <div class="form-layout">
+                <form id="proposal-form" class="card form-card" novalidate>
+                    <h3>Datos personales</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Nombre y apellidos">
+                            <p class="form-error" data-for="nombre"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                            <p class="form-error" data-for="email"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="programa">Programa de estudios *</label>
+                            <input type="text" id="programa" name="programa" required placeholder="Magíster en..., Doctorado en...">
+                            <p class="form-error" data-for="programa"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="institucion">Institución *</label>
+                            <input type="text" id="institucion" name="institucion" required placeholder="Universidad / Centro de investigación">
+                            <p class="form-error" data-for="institucion"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="nivel">Nivel *</label>
+                            <select id="nivel" name="nivel" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="magister">Magíster</option>
+                                <option value="doctorado">Doctorado</option>
+                                <option value="postdoc">Postdoctorado</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <p class="form-error" data-for="nivel"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="asesor">Profesor/a guía (opcional)</label>
+                            <input type="text" id="asesor" name="asesor" placeholder="Nombre de tu supervisor/a">
+                        </div>
+                    </div>
+
+                    <h3>Información de la contribución</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="tipo">Tipo de contribución *</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="charla">Charla oral</option>
+                                <option value="poster">Póster</option>
+                                <option value="flash">Flash talk</option>
+                            </select>
+                            <p class="form-error" data-for="tipo"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="idioma">Idioma de la presentación *</label>
+                            <select id="idioma" name="idioma" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                            </select>
+                            <p class="form-error" data-for="idioma"></p>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="titulo">Título de la presentación *</label>
+                            <input type="text" id="titulo" name="titulo" required placeholder="Título tentativo de tu charla o póster">
+                            <p class="form-error" data-for="titulo"></p>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="resumen">Resumen (150–250 palabras) *</label>
+                            <textarea id="resumen" name="resumen" rows="6" required placeholder="Describe brevemente el objetivo, la metodología y los resultados principales (si existen)."></textarea>
+                            <p class="form-error" data-for="resumen"></p>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="keywords">Palabras clave (separadas por coma)</label>
+                            <input type="text" id="keywords" name="keywords" placeholder="Ejemplo: dinámica, epidemiología, sistemas complejos">
+                        </div>
+                    </div>
+
+                    <h3>Detalles adicionales</h3>
+                    <div class="form-grid">
+                        <div class="form-group form-group-full">
+                            <label for="comentarios">Comentarios o requisitos especiales</label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Disponibilidad horaria, requerimientos técnicos, etc."></textarea>
+                        </div>
+                        <div class="form-group form-group-full checkbox-group">
+                            <label>
+                                <input type="checkbox" id="consentimiento" name="consentimiento" required>
+                                Acepto que mis datos sean utilizados para la organización del coloquio y la comunicación oficial del evento. *
+                            </label>
+                            <p class="form-error" data-for="consentimiento"></p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar propuesta</button>
+                    <p class="form-note">* Campos obligatorios.</p>
+                    <p id="form-success" class="form-success" hidden>
+                        ¡Gracias! Tu propuesta ha sido enviada correctamente y archivada en el servidor.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+        <div class="footer-content">
+            <div>
+                <h3>Contacto</h3>
+                <p>Correo del comité organizador: <a href="mailto:israel.obreque@usach.cl">israel.obreque@usach.cl</a></p>
+                <p>Doctorado en Ciencias · Física · USACH</p>
+            </div>
+            <div>
+                <h3>Organizadores</h3>
+                <p>Ph.D(c) Israel Obreque Maureira</p>
+                <p>Ph.D(c) Miguel Angel Cajahuanca Ricaldi.</p>
+            </div>
+        </div>
+        <p class="footer-bottom">
+            &copy; <span id="year"></span> Coloquio de Estudiantes de Posgrado. Todos los derechos reservados.
+        </p>
+    </footer>
+</body>
+</html>
