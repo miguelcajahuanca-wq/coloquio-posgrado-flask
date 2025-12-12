@@ -24,7 +24,6 @@ def api_propuestas():
         "email",
         "programa",
         "institucion",
-        "nivel",
         "titulo",
         "resumen",
     ]
@@ -50,7 +49,6 @@ def api_propuestas():
                 "email",
                 "programa",
                 "institucion",
-                "nivel",
                 "asesor",
                 "titulo",
                 "resumen",
@@ -64,7 +62,6 @@ def api_propuestas():
             data.get("email", "").strip(),
             data.get("programa", "").strip(),
             data.get("institucion", "").strip(),
-            data.get("nivel", "").strip(),
             data.get("asesor", "").strip(),
             data.get("titulo", "").strip(),
             data.get("resumen", "").strip().replace("\n", " "),
