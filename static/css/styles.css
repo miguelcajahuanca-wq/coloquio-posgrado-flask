@@ -786,3 +786,62 @@ textarea {
         margin-top: 2rem;
     }
 }
+.program-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 2px solid var(--accent, #2a4fff);
+    padding-left: 2rem;
+}
+
+.program-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.program-item::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent, #2a4fff);
+    border-radius: 50%;
+}
+
+.program-item.break::before {
+    background: #999;
+}
+
+.program-item.highlight::before {
+    background: #000;
+}
+
+.program-item.speaker-highlight::before {
+    background: #d32f2f;
+}
+
+.time {
+    min-width: 120px;
+    font-weight: 600;
+    color: #555;
+}
+
+.content h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.program-item.break h4 {
+    font-style: italic;
+    color: #666;
+}
+
+.section-subtitle {
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.95rem;
+}
