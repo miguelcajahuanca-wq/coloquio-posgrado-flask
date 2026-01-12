@@ -788,84 +788,104 @@ textarea {
 }
 /* Progrma */
 
-.program-white {
-    background: #ffffff;
-    color: #0a0a0a;
-    padding: 6rem 2rem;
+/* Fondo general */
+.program-wrapper {
+    background: #f4f6f9; /* gris muy claro, elegante */
+    padding: 6rem 1.5rem;
 }
 
-.program-header {
+/* Card blanca */
+.program-card {
     max-width: 900px;
-    margin: 0 auto 4rem;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 4rem 3.5rem;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.06),
+        0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Header */
+.program-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
 }
 
 .program-header h2 {
     font-size: 3rem;
     font-weight: 600;
     letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+    color: #111;
 }
 
 .program-header p {
-    margin-top: 0.8rem;
-    font-size: 1.25rem;
-    color: #555;
+    font-size: 1.2rem;
+    color: #666;
 }
 
+/* Lista */
 .program-list {
-    max-width: 900px;
-    margin: 0 auto;
-    padding-left: 2.5rem;
-    border-left: 2px solid #e5e5e5;
+    border-left: 3px solid #e5e7eb;
+    padding-left: 3rem;
 }
 
-.row {
+/* Fila */
+.program-row {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 170px 1fr;
     align-items: center;
     padding: 1.1rem 0;
     position: relative;
 }
 
-.row::before {
+.program-row::before {
     content: "";
     position: absolute;
-    left: -9px;
-    width: 10px;
-    height: 10px;
+    left: -38px;
+    width: 12px;
+    height: 12px;
     background: #111;
     border-radius: 50%;
 }
 
+/* Tiempo */
 .time {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #777;
     font-variant-numeric: tabular-nums;
 }
 
+/* Título */
 .title {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     font-weight: 500;
+    color: #111;
 }
 
-/* Variantes */
-
-.row.break::before {
-    background: #bbb;
-}
-
-.row.break .title {
-    font-style: italic;
-    color: #666;
-}
-
-.row.opening::before {
-    background: #000;
-}
-
-.row.keynote::before {
-    background: #c1121f;
-}
-
-.row.keynote .title {
+/* Apertura */
+.program-row.opening .title {
     font-weight: 600;
+}
+
+/* Coffee break */
+.program-row.break::before {
+    background: #aaa;
+}
+
+.program-row.break .title {
+    font-style: italic;
+    color: #777;
+}
+
+/* Keynote */
+.program-row.keynote::before {
+    background: #d32f2f;
+}
+
+.program-row.keynote .title {
+    font-weight: 600;
+}
+: 600;
 }
