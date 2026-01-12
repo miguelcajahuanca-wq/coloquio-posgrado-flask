@@ -196,7 +196,7 @@
         
                 <div class="pdf-container">
                     <iframe 
-                        src="resumenes.pdf"
+                        src="{{ url_for('static', filename='resumenes.pdf') }}"
                         title="Libro de resúmenes"
                         loading="lazy">
                     </iframe>
@@ -205,7 +205,9 @@
                 <div class="pdf-note">
                     <p>
                         Si el documento no se visualiza correctamente, puede
-                        <a href="resumenes.pdf" target="_blank">abrirse en una nueva pestaña</a>.
+                        <a href="{{ url_for('static', filename='resumenes.pdf') }}" target="_blank">
+                            abrirse en una nueva pestaña
+                        </a>.
                     </p>
                 </div>
         
