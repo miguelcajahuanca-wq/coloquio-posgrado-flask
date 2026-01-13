@@ -194,13 +194,15 @@
                     <p>Compendio de resúmenes de las presentaciones del coloquio</p>
                 </header>
         
-                <div class="pdf-container">
-                    <iframe 
-                        src="{{ url_for('static', filename='resumenes.pdf') }}"
-                        title="Libro de resúmenes"
-                        loading="lazy">
-                    </iframe>
-                </div>
+            <div class="pdf-container">
+                <iframe 
+                    src="{{ url_for('static', filename='resumenes.pdf') }}#view=FitH&zoom=page-width"
+                    title="Libro de resúmenes"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
         
                 <div class="pdf-note">
                     <p>
