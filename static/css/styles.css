@@ -889,11 +889,12 @@ textarea {
 }
 : 600;
 }
+
 /* Contenedor del PDF */
 .pdf-container {
     width: 100%;
-    height: 85vh;
-    border-radius: 12px;
+    height: 90vh; /* MÁS altura real */
+    border-radius: 14px;
     overflow: hidden;
     border: 1px solid #e5e7eb;
     background: #f9fafb;
